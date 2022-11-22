@@ -7,11 +7,13 @@
 body{
   display: grid;
   grid-template-areas:
-        "nav shop "
-        "nav shop "
-        "nav shop "
-        "nav shop ";
-  
-grid-template-columns:auto;
+        "nav shop";
+  grid-template-columns:300px auto;
+  grid-template-rows: 100vh;
       
 }
+
+.shop{
+  grid-area: shop;
+}
+
