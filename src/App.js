@@ -8,7 +8,7 @@ function App() {
     <>
     <NavBar/>
     <main className="shop">
-      <ItemListContainer/>
+      <ItemListContainer greet={'Hola Mundo'}/>
     </main>
     
     </>

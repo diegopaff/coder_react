@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-body{
+#root{
   display: grid;
   grid-template-areas:
         "nav shop";
@@ -13,7 +13,4 @@ body{
       
 }
 
-.shop{
-  grid-area: shop;
-}
 

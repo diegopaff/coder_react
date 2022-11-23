@@ -5,7 +5,9 @@ const CartWidget = ({ cantidad }) => {
     return(
         <a className='nav__item-link nav__item' href='#'> 
             <i class="material-icons">shopping_cart</i>
-            <p className='items_cart'> {cantidad} </p>
+            <div className='items_cart'> 
+                <p>{cantidad}</p> 
+            </div>
             <p> Carrito </p>
         </a> 
     )

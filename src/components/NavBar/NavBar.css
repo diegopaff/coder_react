@@ -15,6 +15,12 @@
     margin-bottom: 2rem;
 }
 
+.logo__img{
+    object-fit: cover;
+    height: 80px;
+    filter: brightness(20);
+    
+}
 .nav__item-list{
 
     width: 100%;
@@ -23,7 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    
 
 }
 
@@ -35,6 +41,7 @@
     align-items: center;
     padding-left: 30%;
     transition: .3s ease;
+    position: relative;
 
 }
 .nav__item:hover{
