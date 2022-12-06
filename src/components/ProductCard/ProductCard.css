@@ -1,6 +1,7 @@
 .card-container{
-    background-color: aquamarine;
+    background-color: rgb(222, 222, 222);
     width: 450px;
+    text-decoration:none;
 
 }
 
@@ -18,14 +19,22 @@
 .product__title{
     font-size: 1.5rem;
     font-weight: 800;
+    text-decoration:none;
 }
 
 .product__description{
     font-size: 1rem;
     font-weight: 400;
+    text-decoration:none;
 }
 
 .product__price{
     font-size: 2rem;
     font-weight: 200;
+    text-decoration:none;
+}
+
+.product__link{
+    text-decoration:none;
+    color: #201C26;
 }
