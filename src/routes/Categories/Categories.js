@@ -7,10 +7,13 @@ const Categories = () => {
         fetch('https://dummyjson.com/products/categories')
             .then(res => res.json())
             .then(setCategories);
-    })
+    },[]);
     return (
-        <div> 
-            {categories?.map((categorie) => <p>{categorie}</p>) }
+        <div>
+            <ul>
+                {categories?.map((categorie) => 
+                <li>{categorie}</li>) }
+            </ul> 
         </div>
     )
 }
