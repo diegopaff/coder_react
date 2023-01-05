@@ -3,11 +3,12 @@ import './ItemListContainer.css';
 import ProductCard from '../ProductCard/ProductCard.js';
 
 const ItemList = ({ products }) => {
-    console.log(products);
+    
     return (
         <div className='products'>
             {products.map((product) => (
                 <ProductCard product={product} key={product.id} />
+                
             ))}
         </div>
     )

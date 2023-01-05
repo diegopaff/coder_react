@@ -3,8 +3,10 @@ import './ProductId.css';
 
 import {useParams} from 'react-router-dom';
 import ProductId from './ProductId.js';
-const ProductIdContainer = () => {
 
+
+//Componente que llama a una api por un producto en específico
+const ProductIdContainer = () => {
     const [product, setProduct] = useState({});
     const {id} = useParams();
     useEffect(() => {

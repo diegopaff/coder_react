@@ -3,6 +3,7 @@ import React from 'react';
 import './ProductCard.css'
 import ThumbnailHandler from './ThumbnailHandler.js';
 import { Link } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount.js';
 const ProductCard = ({ product }) => {
 
     const id = product.id;
@@ -15,6 +16,7 @@ const ProductCard = ({ product }) => {
                 <p className='product__description'>{product.description}</p>
                 <p className='product__price'> $ {product.price}</p>
             </Link>
+            <ItemCount product={product}  stock={product.stock} />
         </div>
     );
 
