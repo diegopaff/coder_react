@@ -1,4 +1,5 @@
 import React, {useEffect , useState}  from 'react';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import './ProductId.css';
 
 import {useParams} from 'react-router-dom';
@@ -9,12 +10,17 @@ import ProductId from './ProductId.js';
 const ProductIdContainer = () => {
     const [product, setProduct] = useState({});
     const {id} = useParams();
-    useEffect(() => {
-        fetch(`https://dummyjson.com/products/${id}`)
-            .then(res => res.json())
-            .then(setProduct);
-    },[id]);
     
+    useEffect(() => {
+        const db = getFirestore();
+        const itemRef = doc(db, 'items', id);
+        getDoc(itemRef).then((snapshot) => {
+          if (snapshot.exists()) {
+            setProduct({ id: snapshot.id, ...snapshot.data() });
+          }
+        });
+      }, [id]);
+
     return (
         <div>
             <ProductId product={product}/>
@@ -23,3 +29,9 @@ const ProductIdContainer = () => {
 }
 
 export default ProductIdContainer;
+
+/* useEffect(() => {
+    fetch(`https://dummyjson.com/products/${id}`)
+        .then(res => res.json())
+        .then(setProduct);
+},[id]); */

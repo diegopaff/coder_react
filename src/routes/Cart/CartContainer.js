@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import CartItem from './CartItem'; 
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+import CheckoutContainer from '../../components/Checkout/CheckoutContainer';
 
 const CartContainer = () => {
 
@@ -12,14 +13,17 @@ const CartContainer = () => {
     if(Cart.length > 0){
         return (
         <div className='Cart'>
-            {Cart.map((product) => (
+            {Cart.map((product, index) => (
             <CartItem 
                 product={product} 
                 remove={RemoveItemCart}
+                key={index}
                 />
             ))}
             <p> El total de tu compra es de: {GetTotalCart()}</p>
             <button onClick={EmptyCartHandler} className='btn'>Vaciar Carrito</button>
+
+            <CheckoutContainer />
             
         </div>
         )   

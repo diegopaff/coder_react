@@ -12,7 +12,7 @@ const CartItem = ({ product, remove }) => {
     return (
         <div className='Cart__item'>
             <div className='img-container'>
-                <img className='item__image' src={product.thumbnail}/>
+                <img className='item__image' src={product.image}/>
             </div>
             
             <div className='Cart__item-details'>

@@ -1,0 +1,23 @@
+.item-Count{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn_counter{
+    height: 30px;
+    width: 30px;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn_counter:hover{
+    background-color: bisque;
+}
+
+.count-number{
+    height: 30px;
+    width: 30px;
+    border: 0;
+    font-weight: 500;
+}
+

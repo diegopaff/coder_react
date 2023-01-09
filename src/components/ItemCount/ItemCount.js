@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 
 import { CartContext } from '../../context/CartContext';
 
+import './ItemCount.css';
+
 
 
 
@@ -29,13 +31,13 @@ const ItemCount = ({ stock, product }) => {
 
     return (
         
-        <div>
-            <div class="btn-group">
+        <div className='item-Count'>
+            <div className="btn-group">
                 <button type="button" className="btn_counter" onClick={restarItem}>-</button>
-                <button type="button" className="btn_counter">{Counter}</button>
+                <button type="button" className="count-number">{Counter}</button>
                 <button type="button" className="btn_counter" onClick={sumarItem}>+</button>
             </div>
-            <button type="button" className="btn_agregar" onClick={onAdd}>Agregar al Carrito</button>
+            <button type="button" className="btn-agregar" onClick={onAdd}>Agregar al Carrito</button>
         </div>
     )
 }
