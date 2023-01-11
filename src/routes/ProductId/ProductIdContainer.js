@@ -31,8 +31,3 @@ const ProductIdContainer = () => {
 
 export default ProductIdContainer;
 
-/* useEffect(() => {
-    fetch(`https://dummyjson.com/products/${id}`)
-        .then(res => res.json())
-        .then(setProduct);
-},[id]); */

@@ -4,6 +4,9 @@ import {getFirestore, collection, addDoc, } from "firebase/firestore";
 
 import { CartContext } from '../../context/CartContext';
 
+//estilos
+import './Checkout.css'
+
 const CheckoutContainer = () => {
 
     // traigo la información del carrito del contexto CartContext
@@ -58,43 +61,49 @@ const CheckoutContainer = () => {
         <div>
             { typeof id !== "undefined" ? (
                 <div> 
-                    <p> La compra se ha realizado con éxito</p>
-                    
+                    <p> La compra se ha realizado con éxito</p> 
                 </div> 
             
             ) : (
-            <div > 
+            <div className='checkout_form_container' > 
+                <h2> Checkout</h2>
                 <form onSubmit={submitHandler}>
                     <div>
-                        <label htmlFor="name">Nombre</label>
-                        <input
+                        {/* <label htmlFor="name">Nombre</label> */}
+                        <input 
+                            className='checkout_form_input'
                             name="name"
                             id="name"
                             value={Buyer.name}
                             onChange={changeHandler}
+                            placeholder='Nombre'
                         />
                     </div>
                     <div>
-                        <label htmlFor="email">Email</label>
+                        {/* <label htmlFor="email">Email</label> */}
                         <input
+                            className='checkout_form_input' 
                             type="email"
                             name="email"
                             id="email"
                             value={Buyer.email}
                             onChange={changeHandler}
+                            placeholder='E-mail'
                         />
                     </div>
                     <div>
-                        <label htmlFor="message">Teléfono</label>
+                        {/* <label htmlFor="message">Teléfono</label> */}
                         <input
+                            className='checkout_form_input'
                             type="number"
                             name="phone"
                             id="phone"
                             value={Buyer.phone}
                             onChange={changeHandler}
+                            placeholder='Teléfono'
                         />
                     </div>
-                    <button>Finalizar Compra</button>
+                    <button className='btn-checkout'>Finalizar Compra</button>
                 </form> 
             </div>
             )}

@@ -16,7 +16,7 @@ const CartContainer = () => {
             <div className='Cart_Content'>
                 <h2 className='Cart_title'>Tu Carrito</h2>
                 <Link to={`/Store`}>
-                        <p className='simple_link'> No terminaste de comprar? Ir a la store </p>
+                        <p className='return_link'> No terminaste de comprar? Ir a la store </p>
                 </Link>
                 {Cart.map((product, index) => (
                 <CartItem 
@@ -27,9 +27,10 @@ const CartContainer = () => {
                 ))}
             </div>
             <div className='checkout_container'>
+            <CheckoutContainer />
                 <p> El total de tu compra es de: {GetTotalCart()}</p>
                 <button onClick={EmptyCartHandler} className='btn'>Vaciar Carrito</button>
-                <CheckoutContainer />
+                
 
             </div>
     
@@ -39,13 +40,13 @@ const CartContainer = () => {
     
     //si NO hay items renderizo:
     return (
-        <div className='Cart'>
+        <div className='Cart_empty'>
             <p> Todavía no agregaste ningún producto al carrito </p>
             
-            <Link className='nav__item-link' to='/Store'>
-                <button className='btn'>
+            <Link className='btn_toStore' to='/Store'>
+                <button className='btn_toStore'>
                     <i class="material-icons">loyalty</i>
-                    Haz click para ir a la Store a comprar 
+                    <p>Haz click para ir a la Store a comprar </p>
                 </button>
             </Link>     
         </div>

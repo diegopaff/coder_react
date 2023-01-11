@@ -17,15 +17,21 @@ const CartItem = ({ product, remove }) => {
                 </div>
                 
                 <div className='Cart__item-details'>
-                    <p className='title'> {product.title} </p>
+                    <div>
+                        <p className='title'> {product.title} </p>
+                        <p className='brand'> by {product.brand} </p>
+                    </div>
+                    
                     <p className='quantity'> Cantidad: {product.quantity} </p>
-                    <p className='price'> ${product.price} </p>
+                    <p className='price'>
+                         ${product.price} 
+                    </p>
                     
                     {/* {product.quantity > 1 &&
                         <p className='price'>
                             Subtotal: {TotalItemPrice}
                         </p>} */}
-                    <button onClick={RemoveItemCartHandler} className='btn delete'> Eliminar del carrito </button>
+                    <p onClick={RemoveItemCartHandler} className='item_delete'> Eliminar del carrito </p>
                 </div>
                 
             </div>
