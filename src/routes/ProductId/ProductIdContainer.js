@@ -24,6 +24,7 @@ const ProductIdContainer = () => {
     return (
         <div className='Item-detail'>
             <ProductId product={product}/>
+            
         </div>
     );
 }

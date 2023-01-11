@@ -13,18 +13,26 @@ const CartContainer = () => {
     if(Cart.length > 0){
         return (
         <div className='Cart'>
-            {Cart.map((product, index) => (
-            <CartItem 
-                product={product} 
-                remove={RemoveItemCart}
-                key={index}
-                />
-            ))}
-            <p> El total de tu compra es de: {GetTotalCart()}</p>
-            <button onClick={EmptyCartHandler} className='btn'>Vaciar Carrito</button>
+            <div className='Cart_Content'>
+                <h2 className='Cart_title'>Tu Carrito</h2>
+                <Link to={`/Store`}>
+                        <p className='simple_link'> No terminaste de comprar? Ir a la store </p>
+                </Link>
+                {Cart.map((product, index) => (
+                <CartItem 
+                    product={product} 
+                    remove={RemoveItemCart}
+                    key={index}
+                    />
+                ))}
+            </div>
+            <div className='checkout_container'>
+                <p> El total de tu compra es de: {GetTotalCart()}</p>
+                <button onClick={EmptyCartHandler} className='btn'>Vaciar Carrito</button>
+                <CheckoutContainer />
 
-            <CheckoutContainer />
-            
+            </div>
+    
         </div>
         )   
      }

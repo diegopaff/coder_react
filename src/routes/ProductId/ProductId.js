@@ -2,6 +2,7 @@ import React from 'react';
 import './ProductId.css';
 import ItemCount from '../../components/ItemCount/ItemCount';
 
+import {Link} from 'react-router-dom';
 
 const ProductId = ( { product }) => {
 
@@ -24,6 +25,9 @@ const ProductId = ( { product }) => {
                 
             
                 <ItemCount product={product}  stock={product.stock} />
+                <Link to={`/Store`}>
+                    <p className='simple_link'> seguir comprando </p>
+                </Link>
 
 
             </div>
