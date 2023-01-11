@@ -1,14 +1,18 @@
 .Cart__item{
     background: rgb(180, 180, 180);
-    width: 80%;
-    height: 300px;
+    width: 800px;
+    height: 200px;
     margin: 1rem;
     display: flex;
+    gap: 1rem;
     flex-direction: row;
+    font-family: poppins;
 }
 
 .img-container{
-    width: 400px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     background: rgb(106, 106, 106);
     display: flex;
 }
@@ -21,17 +25,17 @@
 .Cart__item-details{
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     gap: 1rem;
+    
 }
 
 .Cart__item-details .title{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
 .Cart__item-details .price{
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .btn{

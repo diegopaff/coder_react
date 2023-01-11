@@ -6,20 +6,27 @@ import ItemCount from '../../components/ItemCount/ItemCount';
 const ProductId = ( { product }) => {
 
     return (
-        <div> 
-            <img src={product.image} />
-            <h2 className='product__title'>{product.title}</h2>
-            <p className='product__description'>Descripción:{product.description}</p>
-            <p className='product__price'> Precio: {product.price} $</p>
-            <p className='product__description'>Rating: {product.rating}</p>
+        <div className='product-detail-container'>
+            <div className='detail-img'>
+                <img className='small-images' src={product.image} />
+                {product.thumbnail?.map((imagen,index)=> (    
+                    index < 3 && <img src={imagen} className='small-images'/> 
+                ))
+                }
+            </div> 
             
-            {product.thumbnail?.map((imagen)=> (
-                <img src={imagen} className='small-images'/>
-            ))
-            }
-            <ItemCount product={product}  stock={product.stock} />
+            <div className='detail-info'>
+                <h2 className='detail__title'>{product.title}</h2>
+                <p className='detail__price'>  ${product.price}</p>
+                <p className='detail__description'>{product.description}</p>
+                <p className='detail__brand'>by {product.brand}</p>
+    
+                
+            
+                <ItemCount product={product}  stock={product.stock} />
 
 
+            </div>
         </div>
 
     );

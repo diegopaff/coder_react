@@ -1,23 +1,48 @@
 .item-Count{
     display: flex;
-    justify-content: space-around;
+    margin-top: 30px;
+    gap: 10px;
+    
+
 }
 
 .btn_counter{
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     border: 0;
     cursor: pointer;
+    transition: ease .2s;
 }
 
 .btn_counter:hover{
-    background-color: bisque;
+    background-color: rgb(0, 0, 0);
+    color:white;
 }
 
 .count-number{
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     border: 0;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-agregar{
+    
+    width: 350px;
+    height: 50px;
+    background: black;
+    color: white;
+    font-family: poppins;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: 2px solid black;
+    transition: ease .2s;
+}
+
+.btn-agregar:hover{
+    background: rgba(0, 0, 0, 0);
+    color: black;
+
 }
 

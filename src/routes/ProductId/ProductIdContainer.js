@@ -22,7 +22,7 @@ const ProductIdContainer = () => {
       }, [id]);
 
     return (
-        <div>
+        <div className='Item-detail'>
             <ProductId product={product}/>
         </div>
     );

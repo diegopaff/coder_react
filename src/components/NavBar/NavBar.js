@@ -29,12 +29,7 @@ const NavBar = () => {
                             Store 
                         </li>
                     </Link>
-                    <Link className='nav__item-link' to='/Categories'>
-                        <li className='nav__item'>
-                            <i class="material-icons">work</i>
-                            Categories 
-                        </li>
-                    </Link>
+    
     
                 </ul>
                 <Link className='nav__item-link' to='/Cart'> 

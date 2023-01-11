@@ -5,7 +5,7 @@ const Store = () =>{
 
     return (
         <main className="shop">
-            <ItemListContainer greet={'Productos Disponibles'}/>
+            <ItemListContainer />
         </main>
     )
 }

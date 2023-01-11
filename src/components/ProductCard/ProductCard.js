@@ -13,8 +13,8 @@ const ProductCard = ({ product }) => {
             <Link to={`/Store/${id}`} className='product__link'>
                 <ThumbnailHandler img={product.image}/>
                 <p className='product__title'>{product.title}</p>
-                <p className='product__description'>{product.description}</p>
                 <p className='product__price'> $ {product.price}</p>
+                <span className='product__category'>{product.category}</span>
             </Link>
             
         </div>

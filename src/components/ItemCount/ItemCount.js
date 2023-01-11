@@ -27,17 +27,20 @@ const ItemCount = ({ stock, product }) => {
 
     }
 
+    const subTotalPrice = () => product.price * Counter
 
 
     return (
         
         <div className='item-Count'>
+
+            <button type="button" className="btn-agregar" onClick={onAdd}>Agregar al Carrito - ${subTotalPrice()}</button>
             <div className="btn-group">
                 <button type="button" className="btn_counter" onClick={restarItem}>-</button>
                 <button type="button" className="count-number">{Counter}</button>
                 <button type="button" className="btn_counter" onClick={sumarItem}>+</button>
             </div>
-            <button type="button" className="btn-agregar" onClick={onAdd}>Agregar al Carrito</button>
+            
         </div>
     )
 }
