@@ -16,8 +16,7 @@ const ItemListContainer = ({ id }) => {
 
         // Con esta variable hago el llamado con el filtro de category
         const FilterQuery = query(itemsCollection, where("category", "==", filter));  
-
-        
+    
         getDocs(filter === 'all' ? itemsCollection : FilterQuery).then((snapshot) => {
           const items = snapshot.docs.map((doc) => ({
             id: doc.id,
@@ -57,10 +56,3 @@ const ItemListContainer = ({ id }) => {
 export default ItemListContainer;
 
 
-/* useEffect(() => {
-        fetch('https://dummyjson.com/products')
-            .then(res => res.json())
-            .then((obj) => (
-                setProducts(obj.products)
-                ));            
-    }, []); */
