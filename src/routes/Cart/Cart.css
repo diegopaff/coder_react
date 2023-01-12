@@ -117,3 +117,16 @@
     background: #E7EEF1;
     color: black;
 }
+
+.checkout_container{
+    font-family: poppins;
+    margin: 150px;
+}
+
+.btn_emptyCart{
+    width: max-content;
+    padding:5px 10px;
+    margin-top: 40px;
+    background: #E7EEF1;
+    cursor: pointer;
+}

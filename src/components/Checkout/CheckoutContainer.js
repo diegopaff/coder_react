@@ -5,12 +5,12 @@ import {getFirestore, collection, addDoc, } from "firebase/firestore";
 import { CartContext } from '../../context/CartContext';
 
 //estilos
-import './Checkout.css'
+import './Checkout.css';
 
 const CheckoutContainer = () => {
 
     // traigo la información del carrito del contexto CartContext
-    const { Cart, GetTotalCart } = useContext( CartContext ); 
+    const { Cart, GetTotalCart, EmptyCart } = useContext( CartContext ); 
 
     // creo un estado para guardar la información del comprador desde un formulario
     const [Buyer, SetBuyer] = useState({
@@ -26,15 +26,13 @@ const CheckoutContainer = () => {
     const [id, SetId] = useState();
     
     const submitHandler = (ev) => {
-
+        
         //evito que se acualice el formulario
         ev.preventDefault();
 
         const db = getFirestore();
         const ordersCollection = collection(db, 'orders'); //me conecto con la colleccion orders de mi firestore
 
-        SetOrder({...Order, Buyer, Cart, Total:GetTotalCart() }) // mezclo la información del comprador con la del carrito
-        
         addDoc(ordersCollection, Order).then(snapshot => {
             
             // una vez mandado el formulario a firestore reinicio el estado Buyer
@@ -43,6 +41,7 @@ const CheckoutContainer = () => {
                 email: '',
                 phone: ''
             });
+        
 
             SetId(snapshot.id);// recupero el id de la orden generada
         })
@@ -53,6 +52,7 @@ const CheckoutContainer = () => {
         //Agarro value y name del event target para poder reutilizar el changeHandler en cada input
         const { value, name } = ev.target;
         SetBuyer({...Buyer, [name]: value});
+        SetOrder({...Order, Buyer, Cart, Total:GetTotalCart()}); // mezclo la información del comprador con la del carrito
     }
 
 
@@ -61,7 +61,8 @@ const CheckoutContainer = () => {
         <div>
             { typeof id !== "undefined" ? (
                 <div> 
-                    <p> La compra se ha realizado con éxito</p> 
+                    <p> La órden de compra se ha generado con éxito </p>
+
                 </div> 
             
             ) : (
@@ -69,7 +70,7 @@ const CheckoutContainer = () => {
                 <h2> Checkout</h2>
                 <form onSubmit={submitHandler}>
                     <div>
-                        {/* <label htmlFor="name">Nombre</label> */}
+                        
                         <input 
                             className='checkout_form_input'
                             name="name"
@@ -80,7 +81,7 @@ const CheckoutContainer = () => {
                         />
                     </div>
                     <div>
-                        {/* <label htmlFor="email">Email</label> */}
+                        
                         <input
                             className='checkout_form_input' 
                             type="email"
@@ -92,7 +93,7 @@ const CheckoutContainer = () => {
                         />
                     </div>
                     <div>
-                        {/* <label htmlFor="message">Teléfono</label> */}
+                        
                         <input
                             className='checkout_form_input'
                             type="number"

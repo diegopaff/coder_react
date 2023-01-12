@@ -24,7 +24,7 @@ const CartItem = ({ product, remove }) => {
                     
                     <p className='quantity'> Cantidad: {product.quantity} </p>
                     <p className='price'>
-                         ${product.price} 
+                         ${product.price*product.quantity} 
                     </p>
                     
                     {/* {product.quantity > 1 &&

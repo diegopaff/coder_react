@@ -1,8 +1,8 @@
-.greeting{
-    display: inline-block;
-    color: blueviolet;
-    font-size: 2rem;
-    
+.ItemList{
+    display: flex;
+    flex-direction: column;
+
+    font-family: poppins;
 }
 
 .products{
@@ -10,3 +10,16 @@
     flex-wrap: wrap;
     gap: 25px;
 }
+
+.itemList-filter{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.itemList-select{
+    width: 300px;
+    height: 50px;
+}
+

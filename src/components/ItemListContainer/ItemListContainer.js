@@ -36,15 +36,17 @@ const ItemListContainer = ({ id }) => {
 
     return (
         <div className="ItemList">
-            <p> Filtrar por categoría </p>
-            <select onChange={filterOnChangeHandler}>
-              <option value="all"> Todos </option>
-              <option value="laptops"> Laptops </option>
-              <option value="smartphones"> Smartphones </option>
-              <option value="fragances" > Perfumes </option>
-              <option value="skincare" > Skin Care </option>
-              <option value="home-decoration" > Home Decoration </option>
-            </select>
+            <div className='itemList-filter'>
+              <p> Filtrar por categoría </p>
+              <select className='itemList-select' onChange={filterOnChangeHandler}>
+                <option value="all"> Todos </option>
+                <option value="laptops"> Laptops </option>
+                <option value="smartphones"> Smartphones </option>
+                <option value="fragances" > Perfumes </option>
+                <option value="skincare" > Skin Care </option>
+                <option value="home-decoration" > Home Decoration </option>
+              </select>
+            </div>
             <ItemList products={products} />
         </div>
         

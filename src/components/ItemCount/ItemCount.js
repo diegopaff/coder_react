@@ -4,6 +4,10 @@ import { CartContext } from '../../context/CartContext';
 
 import './ItemCount.css';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 
@@ -21,9 +25,22 @@ const ItemCount = ({ stock, product }) => {
         Counter < stock ? setCounter(Counter + 1) : setCounter(Counter);
     }
 
+    const notify = () => toast.success(`Se agregó ${Counter} ${product.title} al carrito`, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+
     const onAdd = () => {
         
         AddToCart(product , Counter);
+        notify();
+        
 
     }
 
@@ -40,6 +57,7 @@ const ItemCount = ({ stock, product }) => {
                 <button type="button" className="count-number">{Counter}</button>
                 <button type="button" className="btn_counter" onClick={sumarItem}>+</button>
             </div>
+            <ToastContainer />
             
         </div>
     )

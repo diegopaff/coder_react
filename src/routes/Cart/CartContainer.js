@@ -27,9 +27,9 @@ const CartContainer = () => {
                 ))}
             </div>
             <div className='checkout_container'>
-            <CheckoutContainer />
+                <CheckoutContainer />
                 <p> El total de tu compra es de: {GetTotalCart()}</p>
-                <button onClick={EmptyCartHandler} className='btn'>Vaciar Carrito</button>
+                <button onClick={EmptyCartHandler} className='btn_emptyCart'>Vaciar Carrito</button>
                 
 
             </div>
