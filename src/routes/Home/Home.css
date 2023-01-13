@@ -24,8 +24,9 @@ body{
 .home-page__greeting{
     font-size: 4rem;
     font-weight: 600;
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
     padding: 1rem 2rem;
+    border: 1px solid #000;
 }
 
 
@@ -35,7 +36,6 @@ body{
   background-color: #000;
   background-image: none;
   border: 1px solid #000;
-  border-radius: 4px;
   box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
   box-sizing: border-box;
   color: #fff;
