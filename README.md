@@ -7,7 +7,8 @@ El proyecto es una SPA (Single Page Aplication) realizada con la librería de Re
 La funcionalidad de la aplicación  para la tienda se basa en:
 
 *   Obtener una lista de productos desde una base de datos (firestore) y mostrarlas con su imagen y precio. 
-*   Poder filtrar esos productos por categoría.
+*   Poder filtrar esos productos por categoría dentro de la Store.
+*   Filtrar productos creando rutas dinámicas según categoría.
 *   Entrar a cada producto a ver mas información.
 *   Agregar producto al carrito con la cantidad de items necesario.
 *   Dese el carrito realizar un Checkout donde se rellena un formulario con el que se genera una orden de compra con info de comprador e items del carrito. Esta órden queda guardada también en la base de datos.
@@ -72,13 +73,16 @@ dentro de /src
     * **Store** -> 
         * Renderiza el componente ItemListContainer.        
     * **ProductId** -> ruta dinámica que muestra el detalle del producto seleccionado en la Store utilizando su id. Como también el componente itemCount.
-    * **Cart** -> va listando los productos agregados al carrito y muestra el formulario de checkout. 
+    * **Cart** -> va listando los productos agregados al carrito y muestra el formulario de checkout.
+    * **Category** -> va listando los productos filtrados por la categoria seleccionada. 
 
 * ### **/components** 
     (dentro de cada carpeta se encuentra el componente Container con la lógica y el componente presentacional)
-    * **NavBa**r -> 
+    * **NavBar** -> 
         * Barra de navegación lateral con link a las rutas de la web.
-        * Renderiza componente CartWidget 
+        * Renderiza componente CartWidget
+        * Dentro de NavBarContainer se hace un llamado a Firestore para saber toda la lista de categorías de productos que existe.
+        * Se crea de forma dinámica un CategoryLink que te redirecciona a la route category correspondiente.    
     * **CartWidget** -> muestra la cantidad de productos agregados al carrito
     * **ItemCount** -> componente que agrega productos al carrito.
     Consume el contexto CartContext y agrega productos y cantidad de los mismos a al estado Cart.
