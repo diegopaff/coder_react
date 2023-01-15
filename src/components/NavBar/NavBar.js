@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
-import CartWidget from '../CartWidget/CartWidget.js'
+import CartWidget from '../CartWidget/CartWidget.js';
+import CategoryLink from './CategoryLink.js';
 
 import { CartContext } from '../../context/CartContext';
-const NavBar = () => {
+const NavBar = ( { categories }) => {
 
     const { Cart } = useContext( CartContext );
 
-    
     return(
         <header>
             <nav className='nav'>
@@ -29,6 +29,18 @@ const NavBar = () => {
                             Store 
                         </li>
                     </Link>
+                    <div className='nav__item-link'>
+                        <li className='nav__item no-hover'>
+                                <i class="material-icons">loyalty</i>
+                                Categories
+                        </li>
+                    </div>
+
+                    {/* Hago un listado con las categorias existentes */}
+                    {categories.map((cat)=> ( 
+                        <CategoryLink nombre={cat} />    
+                    ))}
+                    
     
     
                 </ul>
