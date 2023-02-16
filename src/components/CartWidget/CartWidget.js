@@ -3,14 +3,14 @@ import './CartWidget.css';
 
 const CartWidget = ({ cantidad }) => {
     return(
-        <a className='nav__item-link nav__item' href='#'> 
+        <div className='nav__item-link nav__item'> 
             <i class="material-icons">shopping_cart</i>
 
-            <div className={cantidad != 0 ? 'items_cart' : 'no-items' }>
+            <div className={cantidad !== 0 ? 'items_cart' : 'no-items' }>
                 <p>{cantidad}</p> 
             </div>
-            <p> Carrito </p>
-        </a> 
+            <p> Cart </p>
+        </div> 
     )
 }
 

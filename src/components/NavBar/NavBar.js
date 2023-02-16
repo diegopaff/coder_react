@@ -3,6 +3,7 @@ import './NavBar.css';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget.js';
 import CategoryLink from './CategoryLink.js';
+import { AiTwotoneShop } from 'react-icons/ai'
 
 import { CartContext } from '../../context/CartContext';
 const NavBar = ( { categories }) => {
@@ -13,8 +14,8 @@ const NavBar = ( { categories }) => {
         <header>
             <nav className='nav'>
                 <Link className='logo nav__item-link' to='/'> 
-                    <img className='logo__img' src='https://www.clipartmax.com/png/full/176-1769737_price-tag-vector-price-tag-logo-png.png'/>
-                    E-Shop 
+                    <AiTwotoneShop/>
+                    <p> E-Shop </p>
                 </Link>
                 <ul className='nav__item-list'>
                     <Link className='nav__item-link' to='/'>
