@@ -10,7 +10,7 @@ import './Checkout.css';
 const CheckoutContainer = () => {
 
     // traigo la información del carrito del contexto CartContext
-    const { Cart, GetTotalCart, EmptyCart } = useContext( CartContext ); 
+    const { Cart, GetTotalCart } = useContext( CartContext ); 
 
     // creo un estado para guardar la información del comprador desde un formulario
     const [Buyer, SetBuyer] = useState({

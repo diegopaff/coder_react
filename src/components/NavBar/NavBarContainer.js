@@ -5,8 +5,9 @@ import NavBar from './NavBar';
 const NavBarContainer = () => {
 
     //desde la base de datos me traigo todas las categorias existentes.
+    
+    
     const [categories, setCategories] = useState([]); //averiguo todas las categorias existentes
-
     
     useEffect(() => {
         const db = getFirestore();
@@ -18,10 +19,11 @@ const NavBarContainer = () => {
             
             const categoria = colleccion.map((cat) => (cat.category))
         
-            setCategories(...categories , categoria);
+            setCategories(categoria);
         });
     }, []);
 
+    
     const allCategories = [...new Set(categories)]; // me quedo solo con los valores sin repetir
       
     return  <div>

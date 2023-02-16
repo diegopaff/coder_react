@@ -1,5 +1,4 @@
 import './Style.css';
-import NavBar from './components/NavBar/NavBar.js'
 import { BrowserRouter , Routes , Route } from 'react-router-dom';
 
 import Home from './routes/Home/Home.js';

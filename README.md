@@ -25,6 +25,7 @@ La funcionalidad de la aplicación  para la tienda se basa en:
 *   React-router-dom (Navegación de la web)
 *   React-toastify (Muestra alertas cuando se agrega al carrito)
 *   Firebase (Proporciona la Firestore Database)
+*   React-icons (Íconos)
 
 ---
 
