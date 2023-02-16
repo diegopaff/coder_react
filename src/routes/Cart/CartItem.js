@@ -4,7 +4,7 @@ import './Cart.css';
 
 const CartItem = ({ product, remove }) => {
 
-    const TotalItemPrice = product.price * product.quantity;
+   /*  const TotalItemPrice = product.price * product.quantity; */
     const RemoveItemCartHandler = () => {
         remove(product.id);
     }
@@ -13,7 +13,7 @@ const CartItem = ({ product, remove }) => {
         <div className='separador'>
             <div className='Cart__item'>
                 <div className='img-container'>
-                    <img className='item__image' src={product.image}/>
+                    <img className='item__image'  alt="reference product" src={product.image}/>
                 </div>
                 
                 <div className='Cart__item-details'>

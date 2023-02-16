@@ -7,7 +7,7 @@ const ThumbnailHandler = ({ img }) => {
 
     return (
         <div className='product__img-container'>
-            <img src={img}/>
+            <img src={img} alt="reference product"/>
         </div>
         
     );

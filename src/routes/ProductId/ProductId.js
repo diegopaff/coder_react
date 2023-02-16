@@ -9,9 +9,9 @@ const ProductId = ( { product }) => {
     return (
         <div className='product-detail-container'>
             <div className='detail-img'>
-                <img className='small-images' src={product.image} />
+                <img className='small-images' alt="reference" src={product.image} />
                 {product.thumbnail?.map((imagen,index)=> (    
-                    index < 3 && <img src={imagen} className='small-images'/> 
+                    index < 3 && <img src={imagen} alt="reference" className='small-images'/> 
                 ))
                 }
             </div> 
